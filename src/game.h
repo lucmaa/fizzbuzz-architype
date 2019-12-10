@@ -15,6 +15,7 @@ public:
     ~Game();
 
     void addStudent(unsigned pos);
+    std::shared_ptr<Student> getStudent(unsigned pos);
     std::vector<std::shared_ptr<Student>> getStudents();
 
 private:

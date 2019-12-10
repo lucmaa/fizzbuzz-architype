@@ -10,7 +10,6 @@ public:
     ~Student() {};
 
     std::string countoff();
-    unsigned getPosition();
     unsigned getSpecialNumberByIndex(unsigned index);
 
 public:
