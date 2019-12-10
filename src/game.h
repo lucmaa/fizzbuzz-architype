@@ -7,7 +7,11 @@
 
 class Game {
 public:
-    Game(unsigned n);
+    Game(unsigned n = 100,
+        unsigned special_num1 = 3,
+        unsigned special_num2 = 5,
+        unsigned special_num3 = 7
+    );
     ~Game();
 
     void addStudent(unsigned pos);

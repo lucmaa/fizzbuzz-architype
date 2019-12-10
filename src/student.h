@@ -2,6 +2,7 @@
 #define _STUDENT_
 
 #include <string>
+#include <vector>
 
 class Student {
 public:
@@ -10,6 +11,10 @@ public:
 
     std::string countoff();
     unsigned getPosition();
+    unsigned getSpecialNumberByIndex(unsigned index);
+
+public:
+    static unsigned specialNumbers[3];
 
 private:
     unsigned pos;
