@@ -33,4 +33,7 @@ endmacro()
 #gtest(TestStudent TestStudent.cpp)
 add_subdirectory(tests)
 
-add_executable(game src/main.cpp)
+add_executable(game
+    src/main.cpp
+    src/game.cpp
+    src/student.cpp)
