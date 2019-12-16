@@ -4,4 +4,5 @@ include_directories("../src")
 gtest(countoff
     countoff.cpp
     ../src/game.cpp
+    ../src/rule.cpp
     ../src/student.cpp)

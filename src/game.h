@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <memory>
+#include "rule.h"
 #include "student.h"
 
 class Game {
@@ -17,9 +18,11 @@ public:
     void addStudent(unsigned pos);
     std::shared_ptr<Student> getStudent(unsigned pos);
     std::vector<std::shared_ptr<Student>> getStudents();
+    std::vector<std::shared_ptr<Rule>> & getRules();
 
 private:
     std::vector<std::shared_ptr<Student>> students;
+    std::vector<std::shared_ptr<Rule>> rules;
 };
 
 #endif

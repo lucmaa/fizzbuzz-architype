@@ -1,26 +1,38 @@
+#include <iostream>
 #include <assert.h>
 #include "student.h"
+#include "game.h"
 
 
 unsigned Student::specialNumbers[3] = {0};
 
 std::string Student::countoff()
 {
-    if (0 == pos % specialNumbers[0]) {
-        return "Fizz";
-    }
-    else if (0 == pos % specialNumbers[1]) {
-        return "Buzz";
-    }
-    else if (0 == pos % specialNumbers[2]) {
-        return "Whizz";
+    assert(game);
+    
+    std::string result = "";
+    std::vector<std::shared_ptr<Rule>> & rules = game->getRules();
+
+    if (0 == rules.size()) {
+        return std::to_string(pos);
     }
 
-    return std::to_string(pos);
+    for (const auto& r : rules) {
+        if (r->matched(pos)) {
+            result += r->message();
+        } 
+    }
+
+    return result;
 }
 
 unsigned Student::getSpecialNumberByIndex(unsigned index)
 {
     assert(index < 3);
     return specialNumbers[index];
+}
+
+unsigned Student::getPosition()
+{
+    return pos;
 }

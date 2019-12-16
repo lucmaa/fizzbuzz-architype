@@ -18,7 +18,7 @@ Game::~Game()
 
 void Game::addStudent(unsigned pos)
 {
-    students.push_back(std::make_shared<Student>(pos));
+    students.push_back(std::make_shared<Student>(pos, this));
 }
 
 std::shared_ptr<Student> Game::getStudent(unsigned pos)
@@ -34,3 +34,7 @@ std::vector<std::shared_ptr<Student>> Game::getStudents()
     return students;
 }
 
+std::vector<std::shared_ptr<Rule>> & Game::getRules()
+{
+    return rules;
+}
